@@ -31,11 +31,12 @@
             />
 
         <TextView
+            android:id="@+id/powerdBy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/logo"
             android:layout_centerHorizontal="true"
-            android:text=""
+            android:text="@string/powerdBy"
             android:textColor="@color/white"
             android:layout_marginTop="45dp"
             />
