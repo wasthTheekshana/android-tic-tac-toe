@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Tic Tac</string>
     <string name="powerdBy">Develop By Theekshana Harischandra</string>
+    <string name="playMode">Choose Your Play Mode</string>
+    <string name="singleplay">Single Player</string>
+    <string name="multiplay">Multiplayer</string>
 </resources>

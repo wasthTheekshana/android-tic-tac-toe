@@ -7,6 +7,53 @@
     tools:context=".MainActivity">
 
 
+<View android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_slectwindow_1"
+    />
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        >
+
+        <TextView
+            android:id="@+id/playmode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/playMode"
+            android:textColor="#F89841"
+            android:textSize="28sp"
+            android:fontFamily="sans-serif-condensed-medium"/>
+
+        <Button
+            android:id="@+id/btn_1"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/playmode"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="#F95B8A"
+            android:text="@string/singleplay"
+            android:layout_marginTop="35dp"
+            android:padding="15dp"
+
+            />
+
+        <Button
+            android:id="@+id/btn_2"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_1"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="#2BD180"
+            android:text="@string/multiplay"
+            android:layout_marginTop="9dp"
+            android:padding="15dp"
+
+            />
+
+    </RelativeLayout>
 
 </RelativeLayout>
