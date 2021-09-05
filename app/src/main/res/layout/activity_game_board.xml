@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F6"
+    android:orientation="vertical"
+    tools:context=".GameBoard">
+
+    <TextView
+        android:id="@+id/PlayerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/score"
+        android:textColor="#747474"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="7dp"
+        android:text="@string/player_name"
+        android:layout_toLeftOf="@id/score"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        />
+
+    <TextView
+        android:id="@+id/PlayerName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/PlayerName"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toRightOf="@id/score"
+        android:text="AI"
+        android:textAlignment="center"
+        android:textSize="22sp" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/score"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_above="@+id/scene"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="15dp">
+
+        <RelativeLayout
+            android:id="@+id/relas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignStart="@+id/score"
+            android:layout_alignTop="@+id/score"
+            >
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:background="@android:color/darker_gray"></View>
+
+            <TextView
+                android:id="@+id/p1score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="23dp"
+                android:layout_weight="1"
+                android:text="0"
+                android:textSize="24sp" />
+
+
+
+            <TextView
+                android:id="@+id/p2score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="23dp"
+                android:text="0"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/scene"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:background="#f6f8f7"
+        app:cardBackgroundColor="#f6f8f7"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="15dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="2dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_chessboard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/img_stroke"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="fitXY"/>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scene"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:text="Reset"/>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_win"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+        <ImageView
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.8"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="12">
+            <ImageView
+                android:id="@+id/img_win"
+                android:src="@drawable/o"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:alpha="1" />
+            <TextView
+                android:layout_below="@+id/img_win"
+                android:id="@+id/txt_win"
+                android:text="win"
+                android:textStyle="bold"
+                android:textColor="#001078"
+                android:textSize="75sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:weightSum="6">
+                <Button
+                    android:id="@+id/btn_again"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="again"
+                    android:background="@drawable/bg_btn"
+                    android:textAllCaps="false"/>
+                <View
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/btn_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="home"
+                    android:textAllCaps="false"
+                    android:background="@drawable/bg_btn"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

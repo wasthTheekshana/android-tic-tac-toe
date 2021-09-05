@@ -11,7 +11,7 @@
         android:id="@+id/text4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/playeronewall2"
+        android:layout_above="@+id/playeronewa1"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
         android:text="Enter your Name"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/playeronewall2"
+        android:id="@+id/playeronewa1"
         android:layout_width="200dp"
         android:layout_height="45dp"
         android:layout_centerInParent="true"
