@@ -11,7 +11,9 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button btn_1,btn_2;
+
     public static  boolean Multipayer = true;
+    public static int scoreX = 0, scoreO = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -84,6 +84,24 @@ public class ChessboardAdapter extends RecyclerView.Adapter<ChessboardAdapter.Vi
         });
     }
 
+    //win method
+    public void Win(){
+        GameBoard.img_stroke.startAnimation(anim_win);
+        GameBoard.rl_win.setVisibility(View.VISIBLE);
+        GameBoard.rl_win.startAnimation(anim_win);
+        if (winChara.equals("O")){
+            GameBoard.img_win.setImageBitmap(bm_O);
+            MainActivity.scoreO++;
+            GameBoard.win_o.setText("0 : " + MainActivity.scoreO);
+        }else {
+            GameBoard.img_win.setImageBitmap(bm_X);
+            MainActivity.scoreX++;
+            GameBoard.win_x.setText("X: " + MainActivity.scoreX);
+        }
+        GameBoard.txt_win.setText("Win");
+    }
+
+
     // check the win or lose
     public boolean CheckWin(){
 
@@ -123,7 +141,7 @@ public class ChessboardAdapter extends RecyclerView.Adapter<ChessboardAdapter.Vi
             CheckWinPlayer(0);
             return true;
         }else if(arrBms.get(2)  == arrBms.get(4) && arrBms.get(4) == arrBms.get(6) && arrBms.get(2) != null){
-            //middle row match
+            // / cross
             GameBoard.img_stroke.setImageBitmap(arrStroke.get(0));
             CheckWinPlayer(2);
             return true;
