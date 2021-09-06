@@ -10,5 +10,6 @@ public class TwoNameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_name);
+        System.out.println("MultiyPlaye : "+ MainActivity.Multipayer);
     }
 }

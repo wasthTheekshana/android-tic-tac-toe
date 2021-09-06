@@ -5,10 +5,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.wasthdev.my_tic_tac_toe.Adapter.ChessboardAdapter;
 
@@ -55,5 +57,22 @@ public class GameBoard extends AppCompatActivity {
         for (int i= 0; i < 9; i++){
             arrBms.add(null);
         }
+
+        btn_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reset();
+            }
+        });
+    }
+
+    private void reset() {
+    ArrayList<Bitmap> arrBms = new ArrayList<>();
+    for (int i = 0; i < 9;i++){
+        arrBms.add(null);
+    }
+    img_stroke.setImageBitmap(null);
+    turnO = true;
+        Toast.makeText(this,"Turn of O",Toast.LENGTH_SHORT).show();
     }
 }

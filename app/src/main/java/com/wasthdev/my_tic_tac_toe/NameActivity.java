@@ -28,6 +28,7 @@ public class NameActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_name);
 
+        MainActivity.Multipayer = false;
         player1 =findViewById(R.id.playeronewa1);
         button2 = findViewById(R.id.button2);
         player1.addTextChangedListener(new TextWatcher() {
@@ -61,7 +62,7 @@ public class NameActivity extends AppCompatActivity {
                     button2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent intent = new Intent(NameActivity.this,GameBoard.class);
+                            Intent intent = new Intent(NameActivity.this,TwoNameActivity.class);
                             CharSequence[] players = {player_1,player_2};
                             intent.putExtra("playersName",players);
                             intent.putExtra("selectedSinglePLayer",selectedSinglePLayer);
