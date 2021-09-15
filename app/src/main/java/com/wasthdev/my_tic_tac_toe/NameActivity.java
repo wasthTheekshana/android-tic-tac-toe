@@ -62,7 +62,7 @@ public class NameActivity extends AppCompatActivity {
                     button2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent intent = new Intent(NameActivity.this,TwoNameActivity.class);
+                            Intent intent = new Intent(NameActivity.this,GameBoard.class);
                             CharSequence[] players = {player_1,player_2};
                             intent.putExtra("playersName",players);
                             intent.putExtra("selectedSinglePLayer",selectedSinglePLayer);

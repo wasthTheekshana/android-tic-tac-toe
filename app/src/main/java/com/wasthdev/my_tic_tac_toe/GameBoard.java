@@ -1,6 +1,7 @@
 package com.wasthdev.my_tic_tac_toe;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Bitmap;
@@ -24,7 +25,7 @@ public class GameBoard extends AppCompatActivity {
 
     private RecyclerView rv_table;
     public static boolean turnO = true;
-    public static TextView txt_turn, win_x, win_o, txt_win;
+    public static TextView txt_turn, win_x, win_o, txt_win,playerName;
     public static ImageView img_stroke, img_win;
     public static RelativeLayout rl_win;
     private ChessboardAdapter chessboardAdapter;
@@ -33,14 +34,15 @@ public class GameBoard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
-        win_x = findViewById(R.id.PlayerName);
-        win_o = findViewById(R.id.PlayerName2);
+        win_x = findViewById(R.id.p1score);
+        win_o = findViewById(R.id.p2score);
 
         rv_table = findViewById(R.id.rv_chessboard);
         txt_win = findViewById(R.id.txt_win);
         img_stroke = findViewById(R.id.img_stroke);
         rl_win = findViewById(R.id.rl_win);
         img_win =findViewById(R.id.img_win);
+        playerName =findViewById(R.id.PlayerName);
 
 
         btn_reset = findViewById(R.id.btn_reset);
@@ -51,13 +53,16 @@ public class GameBoard extends AppCompatActivity {
         player2 = players[1];
         selectedsingleplayer = getIntent().getBooleanExtra("selectedsingleplayer", true);
 
-        win_x.setText(player1);
+        playerName.setText(player1);
 
         ArrayList<Bitmap> arrBms = new ArrayList<>();
         for (int i= 0; i < 9; i++){
             arrBms.add(null);
         }
-
+        chessboardAdapter = new ChessboardAdapter(getApplicationContext(), arrBms);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 3);
+        rv_table.setLayoutManager(layoutManager);
+        rv_table.setAdapter(chessboardAdapter);
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,8 +76,10 @@ public class GameBoard extends AppCompatActivity {
     for (int i = 0; i < 9;i++){
         arrBms.add(null);
     }
-    img_stroke.setImageBitmap(null);
-    turnO = true;
+        img_stroke.setImageBitmap(null);
+        chessboardAdapter.setArrBms(arrBms);
+        chessboardAdapter.notifyDataSetChanged();
+        turnO = true;
         Toast.makeText(this,"Turn of O",Toast.LENGTH_SHORT).show();
     }
 }

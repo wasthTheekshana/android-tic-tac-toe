@@ -9,7 +9,7 @@
     tools:context=".GameBoard">
 
     <TextView
-        android:id="@+id/PlayerName"
+        android:id="@+id/PlayerName2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/score"
@@ -18,22 +18,23 @@
         android:layout_marginStart="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="7dp"
-        android:text="@string/player_name"
+        android:text="Robo"
         android:layout_toLeftOf="@id/score"
         android:textAlignment="center"
         android:textSize="22sp"
         />
 
     <TextView
-        android:id="@+id/PlayerName2"
+        android:id="@+id/PlayerName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/PlayerName"
+        android:layout_alignTop="@+id/PlayerName2"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:textColor="#747474"
         android:layout_toRightOf="@id/score"
-        android:text="AI"
+        android:text="@string/player_name"
         android:textAlignment="center"
         android:textSize="22sp" />
     <androidx.cardview.widget.CardView
